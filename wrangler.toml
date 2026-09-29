@@ -1,0 +1,29 @@
+name = "bork-secret-share"
+compatibility_date = "2025-09-01"
+pages_build_output_dir = "public"
+
+[vars]
+APP_NAME = "Bork Secret Share"
+PUBLIC_BASE_URL = "https://bork-secret-share.pages.dev"
+DEFAULT_TTL_SECONDS = "604800"
+MAX_TTL_SECONDS = "1209600"
+MIN_TTL_SECONDS = "300"
+ALLOWED_SUPPORT_HUB_ORIGINS = "https://bork-support-hub.pages.dev,https://support.bork.nl"
+FROM_NAME = "Bork Support"
+REPLY_TO_EMAIL = "support@bork.nl"
+LOG_RETENTION_MODE = "permanent"
+REVEAL_RATE_LIMIT_PER_MINUTE = "20"
+CREATE_RATE_LIMIT_PER_MINUTE = "60"
+
+# Secrets (set with `wrangler pages secret put`, never in this file):
+#   APP_ENCRYPTION_KEY, SENDGRID_API_KEY, SUPPORT_HUB_API_TOKEN, FROM_EMAIL
+
+[[d1_databases]]
+binding = "DB"
+database_name = "bork_secret_share"
+database_id = "78cfbd5a-84ee-48e6-91e7-4fcaa27550ec"
+
+[[kv_namespaces]]
+binding = "SECRETS_KV"
+id = "565b7aa81cef453ab62d31da7962500c"
+preview_id = "bb827a16949a4532a08f6487ca8312b8"

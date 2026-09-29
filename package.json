@@ -1,0 +1,17 @@
+{
+  "name": "bork-secret-share",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Bork Secret Share: one-time secret sharing on Cloudflare Pages, KV, D1 and SendGrid",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "dev": "wrangler pages dev public --d1 DB --kv SECRETS_KV",
+    "migrate:local": "wrangler d1 migrations apply bork_secret_share --local",
+    "migrate:remote": "wrangler d1 migrations apply bork_secret_share --remote",
+    "deploy": "wrangler pages deploy public --project-name bork-secret-share"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}
