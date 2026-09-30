@@ -14,7 +14,7 @@ function el(tag, props = {}, ...children) {
 }
 
 function show(title, ...body) {
-  app.replaceChildren(el('h1', {}, title), ...body);
+  app.replaceChildren(el('p', { className: 'eyebrow' }, 'Bork Support'), el('h1', {}, title), ...body);
 }
 
 const info = (text) => el('p', {}, text);
@@ -67,7 +67,7 @@ function ready(status) {
   });
   show(
     'Bork Support heeft een geheim met je gedeeld',
-    status.customerName ? info(`Klant: ${status.customerName}`) : '',
+    status.customerName ? el('p', {}, el('span', { className: 'customer' }, `Klant: ${status.customerName}`)) : '',
     info('Dit geheim kan slechts één keer worden getoond. Zorg dat je klaar bent om het direct te kopiëren.'),
     el('p', { className: 'muted' }, `Beschikbaar tot ${fmt(status.expiresAt)}.`),
     button,
